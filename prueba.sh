@@ -12,9 +12,6 @@ PASSWORD="3b9ac9ff"
 echo "=== Actualizando el sistema ==="
 sudo apt update -y && sudo apt upgrade -y
 
-echo "=== Estableciendo zona horaria ==="
-# sudo timedatectl set-timezone America/Lima
-
 echo "=== Instalando entorno gráfico mínimo (LXQt + Xorg + Openbox) ==="
 sudo apt install -y lxqt-core xorg openbox lightdm xrdp htop
 
@@ -78,6 +75,9 @@ sudo apt clean
 
 echo "=== Reiniciando servicios XRDP ==="
 sudo systemctl restart xrdp
+
+echo "=== Estableciendo zona horaria ==="
+sudo timedatectl set-timezone America/Lima
 
 echo
 echo "=== Instalación completada correctamente ==="
