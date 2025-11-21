@@ -6,8 +6,8 @@
 # ==============================================
 
 # Variables configurables
-USER="andre"
-PASSWORD="abc123"
+USER="hcarlos"
+PASSWORD="3b9ac9ff"
 
 echo "=== Actualizando el sistema ==="
 sudo apt update -y && sudo apt upgrade -y
