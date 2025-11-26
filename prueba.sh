@@ -66,8 +66,30 @@ echo "=== Deshabilitando LightDM (innecesario en VPS) ==="
 sudo systemctl stop lightdm
 sudo systemctl disable lightdm
 
-echo "=== Eliminando componentes innecesarios para VPS ==="
-sudo apt remove -y lxqt-powermanagement qlipper lxqt-notificationd lxqt-runner xscreensaver xscreensaver-data xscreensaver-data-extra xscreensaver-gl gvfs gvfs-daemons gvfs-fuse gvfs-backends pulseaudio
+echo "=== Eliminando componentes innecesarios para optimización de RAM ==="
+sudo apt remove --purge -y \
+    lxqt-powermanagement \
+    qlipper \
+    lxqt-notificationd \
+    lxqt-runner \
+    xscreensaver \
+    xscreensaver-data \
+    xscreensaver-data-extra \
+    xscreensaver-gl \
+    pulseaudio \
+    pulseaudio-utils \
+    gvfs \
+    gvfs-daemons \
+    gvfs-fuse \
+    gvfs-backends \
+    avahi-daemon \
+    avahi-utils \
+    system-config-printer \
+    printer-driver-* \
+    cups* \
+    upower \
+    #at-spi2-core \
+    at-spi2-common
 
 echo "=== Limpiando dependencias no utilizadas ==="
 sudo apt autoremove -y
@@ -87,4 +109,4 @@ echo "Contraseña: $PASSWORD"
 echo
 echo "=== Reiniciando el sistema en 5 segundos para aplicar los cambios ==="
 sleep 5
-sudo reboot
+#sudo reboot
