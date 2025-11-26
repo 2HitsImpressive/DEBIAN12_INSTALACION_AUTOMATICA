@@ -109,4 +109,4 @@ echo "Contraseña: $PASSWORD"
 echo
 echo "=== Reiniciando el sistema en 5 segundos para aplicar los cambios ==="
 sleep 5
-#sudo reboot
+sudo reboot
